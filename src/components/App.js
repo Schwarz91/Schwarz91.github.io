@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Goods, goodsData} from './Goods.js';
+import {Goods} from './components/Goods.js';
+import {goodsData} from './components/Fish.js';
 
 
 class App extends Component {
@@ -23,7 +24,7 @@ class App extends Component {
           <h2>В корзине: {this.state.count} товаров, к оплате {this.state.sum} р.</h2>
         </div>
         <Goods data = {goodsData}
-               handleClick = {this.handleClick} />
+          handleClick = {this.handleClick} />
       </div>
     );
   }
