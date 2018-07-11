@@ -2,21 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import {Goods} from './components/Goods.js';
 import {goodsData} from './components/Fish.js';
+import {handleClickAction} from './actions/Actions.js'
 
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      count: 0,
-      sum: 0,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick (price) {
-    this.setState({count: this.state.count + 1});
-    this.setState({sum: this.state.sum + parseInt(price)});
-  };
+  
+  handleClick = (price) => this.props.dispatch(handleClickAction())
+    
   render() {
     return (
       <div className="App">
