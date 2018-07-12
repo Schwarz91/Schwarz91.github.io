@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
-import rootReducer from './reducers'
+import rootReducer from './reducers/rootReducer';
 import './index.css';
 import App from './components/App'
 import registerServiceWorker from './registerServiceWorker';

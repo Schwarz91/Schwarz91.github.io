@@ -1,6 +1,9 @@
+import goodsData from '../components/Fish'
+
 const initialState = {
     count: 0,
     sum: 0,
+    data: goodsData,
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -9,7 +12,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 count: state.count + 1,
-                sum: state.sum + parseInt(price)
+                sum: state.sum + parseInt(action.price)
             }
         default:
         return state;

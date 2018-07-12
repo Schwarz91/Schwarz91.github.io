@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import {Goods} from './Goods.js';
+import Goods from './Goods.js';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => ({
@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="basket">
-          <h2>В корзине: {this.state.count} товаров, к оплате {this.state.sum} р.</h2>
+          <h2>В корзине: {this.props.count} товаров, к оплате {this.props.sum} р.</h2>
         </div>
         <Goods />
       </div>

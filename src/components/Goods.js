@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import './App.css';
-import {goodsData} from './Fish.js';
+import React from 'react';
+import '../App.css';
+import './Fish.js';
 import {handleClickAction} from '../actions/Actions.js';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => ({
-  data: {goodsData}
+  data: state.data
 })
 
 const mapDispatchToProps = (dispatch) => ({
   handleClick: (price) => dispatch(handleClickAction(price))
 })
 
-const Goods = (state) => {
-  const data = state.data;
+const Goods = () => {
+  const data = this.props.data;
   const itemInfo = data.map((item, index) => 
     <div className="item" key = {index}>
       <h1 className="item-name">{item.name}</h1>
