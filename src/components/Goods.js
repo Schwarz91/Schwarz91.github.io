@@ -12,8 +12,7 @@ const mapDispatchToProps = (dispatch) => ({
   handleClick: (price) => dispatch(handleClickAction(price))
 })
 
-const Goods = () => {
-  const data = this.props.data;
+const Goods = ({data}) => {
   const itemInfo = data.map((item, index) => 
     <div className="item" key = {index}>
       <h1 className="item-name">{item.name}</h1>

@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => ({
   count: state.count,
-  sum: state.sum
+  sum: state.sum,
 })
 
 class App extends Component {  
