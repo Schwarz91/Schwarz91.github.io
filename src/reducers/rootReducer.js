@@ -4,6 +4,7 @@ const initialState = {
     count: 0,
     sum: 0,
     data: goodsData,
+    itemCount: 0,
 }
 
 const rootReducer = (state = initialState, action) => {
