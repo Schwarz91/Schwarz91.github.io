@@ -13,7 +13,14 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 count: state.count + 1,
-                sum: state.sum + parseInt(action.price)
+                sum: state.sum + parseInt(action.price),
+                itemCount: state.itemCount + 1
+            }
+        case 'REMOVE':
+            return {
+                ...state,
+                count: state.count - 1,
+                sum: state.sum - parseInt(action.price)
             }
         default:
         return state;

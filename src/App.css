@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 200px;
+  height: 205px;
   width: 370px;
   background-color: #EEEEEE;
   border: 1px #BBB solid;
@@ -72,7 +72,7 @@
 .button-img {
   height: auto;
   width: 60px;
-  margin: 0px -10px 0px -10px;
+  margin: 0px -10px 5px -10px;
 }
 
 .buttons {
@@ -85,13 +85,14 @@
 
 .buttons button {
   background-color: #428CFA;
-  height: 80%;
-  margin: auto;
+  height: 85%;
+  width: 25px;
+  border-radius: 4px;
+  margin: -1px;
 }
 
-.buttons p {
+.buttons div {
   border: 1px #BBB solid;
   height: 40%;
-  margin: auto;
-  padding: 5px;
+  padding: 3px 5px 7px 5px;
 }
