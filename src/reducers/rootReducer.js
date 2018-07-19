@@ -1,10 +1,12 @@
 import goodsData from '../components/Fish'
 
+const array = Array.from(new Array(9), () => 0);
+
 const initialState = {
     count: 0,
     sum: 0,
     data: goodsData,
-    itemCount: 0,
+    itemCount: array,
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -14,13 +16,24 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 count: state.count + 1,
                 sum: state.sum + parseInt(action.price),
-                itemCount: state.itemCount + 1
+                itemCount: state.itemCount.map((item, index) => {
+                    if(index === action.id) {
+                        item = item + 1;
+                    }
+                    return item;
+                })
             }
         case 'REMOVE':
             return {
                 ...state,
                 count: state.count - 1,
-                sum: state.sum - parseInt(action.price)
+                sum: state.sum - parseInt(action.price),
+                itemCount: state.itemCount.map((item, index) => {
+                    if(index === action.id) {
+                        item = item - 1;
+                    }
+                    return item;
+                })
             }
         default:
         return state;

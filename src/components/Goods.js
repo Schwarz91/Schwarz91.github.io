@@ -10,8 +10,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  itemAdd: (price) => dispatch(itemAddAction(price)),
-  itemRemove: (price) => dispatch(itemRemoveAction(price))
+  itemAdd: (price, id) => dispatch(itemAddAction(price, id)),
+  itemRemove: (price, id) => dispatch(itemRemoveAction(price, id))
 })
 
 const Goods = ({data, itemCount, itemAdd, itemRemove}) => {
@@ -25,11 +25,11 @@ const Goods = ({data, itemCount, itemAdd, itemRemove}) => {
         <div className="item-info-data">
           <h2>Цена</h2>
           <p>{item.price} р.</p>
-          <img className="button-img" src="http://bs.barcod.ru/upload/iblock/444/444e9b9d7400e141def517a2b9b5030f.png" onClick={() => itemAdd(item.price)} alt='Добавить в корзину' />
+          <img className="button-img" src="http://bs.barcod.ru/upload/iblock/444/444e9b9d7400e141def517a2b9b5030f.png" onClick={() => itemAdd(item.price, item.id)} alt='Добавить в корзину' />
           <div className="buttons"> 
-            <button onClick={() => itemRemove(item.price)}>-</button>
-            <div>{itemCount}</div>
-            <button onClick={() => itemAdd(item.price)}>+</button>
+            <button onClick={() => itemRemove(item.price, item.id)}>-</button>
+            <div>{itemCount[item.id]}</div>
+            <button onClick={() => itemAdd(item.price, item.id)}>+</button>
           </div>
         </div>
       </div>

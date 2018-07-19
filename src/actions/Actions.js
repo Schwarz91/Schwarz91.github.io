@@ -1,9 +1,11 @@
-export const itemAddAction = (price) => ({
+export const itemAddAction = (price, id) => ({
     type: 'ADD',
-    price
+    price,
+    id,
 })
 
-export const itemRemoveAction = (price) => ({
+export const itemRemoveAction = (price, id) => ({
     type: 'REMOVE',
-    price
+    price,
+    id,
 })
