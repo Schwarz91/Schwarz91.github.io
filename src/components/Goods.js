@@ -3,6 +3,7 @@ import '../App.css';
 import './Fish.js';
 import {itemAddAction, itemRemoveAction} from '../actions/Actions.js';
 import {connect} from 'react-redux';
+import Button from './Button.js';
 
 const mapStateToProps = (state) => ({
   data: state.data,
@@ -25,12 +26,14 @@ const Goods = ({data, itemCount, itemAdd, itemRemove}) => {
         <div className="item-info-data">
           <h2>Цена</h2>
           <p>{item.price} р.</p>
-          <img className="button-img" src="http://bs.barcod.ru/upload/iblock/444/444e9b9d7400e141def517a2b9b5030f.png" onClick={() => itemAdd(item.price, item.id)} alt='Добавить в корзину' />
+          {/*<img className="button-img" src="http://bs.barcod.ru/upload/iblock/444/444e9b9d7400e141def517a2b9b5030f.png" onClick={() => itemAdd(item.price, item.id)} alt='Добавить в корзину' />
           <div className="buttons"> 
             <button onClick={() => itemRemove(item.price, item.id)}>-</button>
             <div>{itemCount[item.id]}</div>
             <button onClick={() => itemAdd(item.price, item.id)}>+</button>
           </div>
+          */}
+          <Button />
         </div>
       </div>
     </div>
