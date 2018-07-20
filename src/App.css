@@ -69,13 +69,17 @@
   margin: 15px 0px 5px 0px;
 }
 
+.item__buttons {
+  height: 50px;
+}
+
 .item__button_img {
   height: auto;
   width: 60px;
   margin: 0px -10px 5px -10px;
 }
 
-.item__buttons {
+.item__plus_minus_buttons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,19 +87,26 @@
   margin: auto;
 }
 
-.item__buttons button {
+.item__plus_minus_buttons button {
   background-color: #428CFA;
   border-color: #BBB;
-  height: 30%;
+  height: 25px;
   width: 26px;
-  border-radius: 4px;
   margin: -1px;
 }
 
-.item__buttons div {
+#one {
+  border-radius: 4px 0px 0px 4px;
+}
+
+#two {
+  border-radius: 0px 4px 4px 0px;
+}
+
+.item__plus_minus_buttons div {
   background-color: #FFF;
   border: 1px #BBB solid;
-  height: 14%;
+  height: 12px;
   padding: 3px 5px 8px 5px;
   position: relative;
   z-index: 1000;

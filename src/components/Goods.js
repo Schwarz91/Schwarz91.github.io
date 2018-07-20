@@ -25,14 +25,16 @@ const Goods = ({data, itemCount, itemAdd, itemRemove}) => {
         <div className="item__info-data">
           <h2>Цена</h2>
           <p>{item.price} р.</p>
-          {(itemCount[item.id] < 1) ?
-          <img className="item__button_img" src="http://bs.barcod.ru/upload/iblock/444/444e9b9d7400e141def517a2b9b5030f.png" onClick={() => itemAdd(item.price, item.id)} alt='Добавить в корзину' /> : null}
-          {(itemCount[item.id] > 0) ?
-          <div className="item__buttons"> 
-            <button onClick={() => itemRemove(item.price, item.id)}>-</button>
-            <div>{itemCount[item.id]}</div>
-            <button onClick={() => itemAdd(item.price, item.id)}>+</button>
-          </div> : null}
+          <div className="item__buttons">
+            {(itemCount[item.id] < 1) ?
+            <img className="item__button_img" src="http://bs.barcod.ru/upload/iblock/444/444e9b9d7400e141def517a2b9b5030f.png" onClick={() => itemAdd(item.price, item.id)} alt='Добавить в корзину' /> : null}
+            {(itemCount[item.id] > 0) ?
+            <div className="item__plus_minus_buttons"> 
+              <button id="one" onClick={() => itemRemove(item.price, item.id)}>-</button>
+              <div>{itemCount[item.id]}</div>
+              <button id="two" onClick={() => itemAdd(item.price, item.id)}>+</button>
+            </div> : null}
+          </div>
         </div>
       </div>
     </div>
